@@ -5,7 +5,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <h1 className="text-5xl text-center">Welcome to Tech Trend Emporium</h1>
       <Image
-        src="/images/tte-logo.png"
+        src="/images/tte-logo.svg"
         alt="TTE Logo"
         width={200}
         height={200}
