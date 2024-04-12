@@ -60,8 +60,8 @@ const Categories: React.FC = () => {
                         <Image
                             src={categories[1].url}
                             layout='responsive'
-                            width={50} // replace with your value
-                            height={30} // replace with your value
+                            width={9} // replace with your value
+                            height={16} // replace with your value
                             objectFit='contain' 
                             className='rounded-2xl' 
                             alt={'Food Category'}         
@@ -76,8 +76,8 @@ const Categories: React.FC = () => {
                         <Image
                             src={categories[2].url}
                             layout='responsive'
-                            width={50} // replace with your value
-                            height={30} // replace with your value
+                            width={9} // replace with your value
+                            height={16} // replace with your value
                             objectFit='contain' 
                             className='rounded-2xl' 
                             alt={'Food Category'}         

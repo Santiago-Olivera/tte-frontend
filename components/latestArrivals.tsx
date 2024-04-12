@@ -40,7 +40,6 @@ const latestArrivals: React.FC = () => {
             <div className="sm:grid grid-cols-12 p-4 gap-4 my-8  h-auto  ">
                 {/* <!-- Box 1 --> */}
                 <div className="col-span-4  rounded-lg p-4 max-w-[350px] mx-auto " >
-                    <div className='h-[20px] bg-white' ></div>
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4 '>
                     <Image
                         src={latest[0].url}
