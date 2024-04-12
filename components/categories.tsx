@@ -25,7 +25,7 @@ const Categories: React.FC = () => {
                 <h1 className='text-4xl font-bold mb-4'>Categories</h1>
                 <p className='text-sm mx-auto max-w-lg py-4 px-8 mb-2 border-0'>
                     Explore our exclusive collections of cutting-edge electronics, futuristic jewelry, 
-                    and the latest fashion for all your style needs. Whether you're a tech enthusiast, 
+                    and the latest fashion for all your style needs. Whether you&apos;re a tech enthusiast, 
                     a fashionista, or someone who loves unique accessories, we have something for everyone. 
                     Discover the latest trends and find the perfect items to express your personal style. 
                     Shop now and elevate your look with our curated selection of high-quality products.
@@ -51,7 +51,7 @@ const Categories: React.FC = () => {
                         alt={'Food Category'}         
                     />
                     </div>
-                    <p className="text-center font-bold">Men's Clothing</p>
+                    <p className="text-center font-bold">Men&apos;s Clothing</p>
                 </div>
 
                 {/* <!-- Box 2 --> */}
