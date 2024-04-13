@@ -21,7 +21,7 @@ function LatestArrivals(): JSX.Element {
     return (
         <div>
             {/* Latest Arrivals*/}
-            <div className='text-center mt-8'>
+            <div className='text-center mt-8 mb-2'>
                 <h1 className='text-4xl font-bold mb-4'>Latest Arrivals</h1>
                 <p className='text-sm mx-auto max-w-lg py-4 px-8 mb-2 border-0'>
                 The latest arrivals to the store include a wide range of products that are sure 
@@ -60,7 +60,7 @@ function LatestArrivals(): JSX.Element {
                 </div>
 
                 {/* <!-- Box 2 --> */}
-                <div className="col-span-4 rounded-lg p-4 max-w-[350px] mx-auto ">
+                <div className="col-span-4 rounded-lg p-4 max-w-[350px] mx-auto pb-4 relative sm:bottom-8">
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={latest[1].url}
