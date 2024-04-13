@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 
-const latestArrivals: React.FC = () => {
+function LatestArrivals(): JSX.Element {
     const latest = [
         {
           url: 'https://images.unsplash.com/photo-1565714138558-4d2eaa7cea34?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -106,4 +106,4 @@ const latestArrivals: React.FC = () => {
     );
 };
 
-export default latestArrivals;
+export default LatestArrivals;

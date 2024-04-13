@@ -6,7 +6,7 @@ import { RxDotFilled } from 'react-icons/rx';
 import Image from "next/image";
 
 
-const Carousel: React.FC = () => {
+function Carousel(): JSX.Element {
     /* array of objects containing image urls */
     const slides = [
         {

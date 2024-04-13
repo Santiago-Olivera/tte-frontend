@@ -5,11 +5,10 @@ import Carousel from '../../../components/carousel';
 import Categories from '../../../components/categories';
 import LatestArrivals from '../../../components/latestArrivals';
 import OurProducts from '../../../components/ourProducts';
-import Image from "next/image";
 
 
 
-const landingPage: React.FC = () => {
+function LandingPage(): JSX.Element {
     return (
         <div>
             <Carousel />
@@ -18,6 +17,6 @@ const landingPage: React.FC = () => {
             <OurProducts />
         </div>
     );
-};
+}
 
-export default landingPage;
+export default LandingPage;

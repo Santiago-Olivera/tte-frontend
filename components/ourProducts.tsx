@@ -5,7 +5,7 @@ import Image from "next/image";
 
 
 
-const ourProducts: React.FC = () => {
+function OurProducts(): JSX.Element {
     const products = [
         {
           url: 'https://images.unsplash.com/photo-1631155989897-961b8fe3aba4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -107,4 +107,4 @@ const ourProducts: React.FC = () => {
     );
 };
 
-export default ourProducts;
+export default OurProducts;
