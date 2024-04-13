@@ -1,5 +1,6 @@
 "use client";
 
+import Categories from '@/components/ui/Categories';
 import ComponentTest from '@/components/ui/compontentTest';
 import React from 'react';
 /* import Carousel from '../../../components/Carousel';
@@ -16,9 +17,9 @@ function LandingPage(): JSX.Element {
     return (
         <div className="bg-gray-200 p-4">
             <ComponentTest />
-            {/* <Carousel />
+            {/* <Carousel /> */}
             <Categories />
-            <LatestArrivals />
+            {/* <LatestArrivals />
             <OurProducts /> */}
         </div>
     );
