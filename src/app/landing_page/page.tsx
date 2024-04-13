@@ -1,10 +1,10 @@
 "use client";
 
 import React from 'react';
-import Carousel from '../../../components/Carousel';
+/* import Carousel from '../../../components/Carousel';
 import Categories from '../../../components/Categories';
 import LatestArrivals from '../../../components/LatestArrivals';
-import OurProducts from '../../../components/OurProducts';
+import OurProducts from '../../../components/OurProducts'; */
 
 
 
