@@ -1,14 +1,10 @@
 "use client";
 
+import Carousel from '@/components/ui/Carousel';
 import Categories from '@/components/ui/Categories';
-import ComponentTest from '@/components/ui/compontentTest';
+import LatestArrivals from '@/components/ui/LatestArrivals';
+import OurProducts from '@/components/ui/OurProducts';
 import React from 'react';
-/* import Carousel from '../../../components/Carousel';
-import Categories from '../../../components/Categories';
-import LatestArrivals from '../../../components/LatestArrivals';
-import OurProducts from '../../../components/OurProducts'; */
-
-
 
 
 function LandingPage(): JSX.Element {
@@ -16,11 +12,10 @@ function LandingPage(): JSX.Element {
 
     return (
         <div className="bg-gray-200 p-4">
-            <ComponentTest />
-            {/* <Carousel /> */}
+            <Carousel />
             <Categories />
-            {/* <LatestArrivals />
-            <OurProducts /> */}
+            <LatestArrivals />
+            <OurProducts />
         </div>
     );
 }
