@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 
 
-const latestArrivals: React.FC = () => {
+function LatestArrivals(): JSX.Element {
     const latest = [
         {
           url: 'https://images.unsplash.com/photo-1565714138558-4d2eaa7cea34?q=80&w=1888&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -40,17 +40,21 @@ const latestArrivals: React.FC = () => {
             <div className="sm:grid grid-cols-12 p-4 gap-4 my-8  h-auto  ">
                 {/* <!-- Box 1 --> */}
                 <div className="col-span-4  rounded-lg p-4 max-w-[350px] mx-auto " >
-                    <div className='h-[20px] bg-white' ></div>
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4 '>
                     <Image
                         src={latest[0].url}
-                        layout='responsive'
-                        width={9} // replace with your value
-                        height={16} // replace with your value
-                        objectFit='contain' // fit will occupy the entire space of the container
-                        className='rounded-2xl' 
-                        alt={'Iphone-15'}         
-                    />
+                        // replace with your value
+                        width={9}
+                        // replace with your value
+                        height={16}
+                        className='rounded-2xl'
+                        alt={'Iphone-15'}
+                        sizes="100vw"
+                        style={{
+                            width: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                        }} />
                     </div>
                     <p className="text-center font-bold">Iphone</p>
                 </div>
@@ -60,13 +64,18 @@ const latestArrivals: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={latest[1].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'earrings'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'earrings'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Silver Earrings</p>
                 </div>
@@ -76,13 +85,18 @@ const latestArrivals: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={latest[2].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'gold-ring'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'gold-ring'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Gold-ring</p>
                 </div>
@@ -92,4 +106,4 @@ const latestArrivals: React.FC = () => {
     );
 };
 
-export default latestArrivals;
+export default LatestArrivals;

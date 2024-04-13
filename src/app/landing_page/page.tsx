@@ -1,22 +1,23 @@
 "use client";
 
+import Carousel from '@/components/ui/Carousel';
+import Categories from '@/components/ui/Categories';
+import LatestArrivals from '@/components/ui/LatestArrivals';
+import OurProducts from '@/components/ui/OurProducts';
 import React from 'react';
-import Carousel from '../../../components/carousel';
-import Categories from '../../../components/categories';
-import LatestArrivals from '../../../components/latestArrivals';
-import OurProducts from '../../../components/ourProducts';
 
 
+function LandingPage(): JSX.Element {
+    
 
-const landingPage: React.FC = () => {
     return (
-        <div>
+        <div className="bg-gray-200 p-4">
             <Carousel />
             <Categories />
             <LatestArrivals />
             <OurProducts />
         </div>
     );
-};
+}
 
-export default landingPage;
+export default LandingPage;

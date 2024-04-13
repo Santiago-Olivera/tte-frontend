@@ -1,11 +1,11 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 
 
-const ourProducts: React.FC = () => {
+function OurProducts(): JSX.Element {
     const products = [
         {
           url: 'https://images.unsplash.com/photo-1631155989897-961b8fe3aba4?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'
@@ -41,13 +41,18 @@ const ourProducts: React.FC = () => {
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4 '>
                     <Image
                         src={products[0].url}
-                        layout='responsive'
-                        width={9} // replace with your value
-                        height={16} // replace with your value
-                        objectFit='contain' // fit will occupy the entire space of the container
-                        className='rounded-2xl' 
-                        alt={'Samsung Galaxy S21 Ultra'}         
-                    />
+                        // replace with your value
+                        width={9}
+                        // replace with your value
+                        height={16}
+                        className='rounded-2xl'
+                        alt={'Samsung Galaxy S21 Ultra'}
+                        sizes="100vw"
+                        style={{
+                            width: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                        }} />
                     </div>
                     <p className="text-center font-bold">Samsung Galaxy S21 Ultra</p>
                     <p className="text-center font-semibold">$650</p>
@@ -58,13 +63,18 @@ const ourProducts: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={products[1].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'Sport nike shoes'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'Sport nike shoes'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Sport nike shoes</p>
                     <p className="text-center font-semibold">$125</p>
@@ -75,13 +85,18 @@ const ourProducts: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={products[2].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'Diamont necklace'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'Diamont necklace'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Diamont necklace</p>
                     <p className="text-center font-semibold">$599</p>
@@ -92,4 +107,4 @@ const ourProducts: React.FC = () => {
     );
 };
 
-export default ourProducts;
+export default OurProducts;

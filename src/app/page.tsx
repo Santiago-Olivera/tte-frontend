@@ -1,4 +1,8 @@
+
 import Image from "next/image";
+import Link from "next/link";
+
+
 
 export default function Home() {
   return (
@@ -17,6 +21,9 @@ export default function Home() {
       and the latest fashion for men and women. Discover products that blend elegance with innovation. 
       Make shopping a futuristic and stylish experience at TechTrend Emporium!
       </p>
+      <Link href="/landing_page">
+        <p>Go to Landing Page</p>
+      </Link>
     </main>
   );
 }
