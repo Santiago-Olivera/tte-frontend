@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 
 
@@ -43,13 +43,18 @@ const latestArrivals: React.FC = () => {
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4 '>
                     <Image
                         src={latest[0].url}
-                        layout='responsive'
-                        width={9} // replace with your value
-                        height={16} // replace with your value
-                        objectFit='contain' // fit will occupy the entire space of the container
-                        className='rounded-2xl' 
-                        alt={'Iphone-15'}         
-                    />
+                        // replace with your value
+                        width={9}
+                        // replace with your value
+                        height={16}
+                        className='rounded-2xl'
+                        alt={'Iphone-15'}
+                        sizes="100vw"
+                        style={{
+                            width: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                        }} />
                     </div>
                     <p className="text-center font-bold">Iphone</p>
                 </div>
@@ -59,13 +64,18 @@ const latestArrivals: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={latest[1].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'earrings'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'earrings'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Silver Earrings</p>
                 </div>
@@ -75,13 +85,18 @@ const latestArrivals: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={latest[2].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'gold-ring'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'gold-ring'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Gold-ring</p>
                 </div>

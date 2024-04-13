@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+import Image from "next/image";
 
 
 
@@ -43,13 +43,18 @@ const Categories: React.FC = () => {
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4 '>
                     <Image
                         src={categories[0].url}
-                        layout='responsive'
-                        width={9} // replace with your value
-                        height={16} // replace with your value
-                        objectFit='contain' // fit will occupy the entire space of the container
-                        className='rounded-2xl' 
-                        alt={'Food Category'}         
-                    />
+                        // replace with your value
+                        width={9}
+                        // replace with your value
+                        height={16}
+                        className='rounded-2xl'
+                        alt={'Food Category'}
+                        sizes="100vw"
+                        style={{
+                            width: "100%",
+                            height: "auto",
+                            objectFit: "contain"
+                        }} />
                     </div>
                     <p className="text-center font-bold">Men&apos;s Clothing</p>
                 </div>
@@ -59,13 +64,18 @@ const Categories: React.FC = () => {
                     <div className='w-full  rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={categories[1].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'Food Category'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'Food Category'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">Electronics</p>
                 </div>
@@ -75,13 +85,18 @@ const Categories: React.FC = () => {
                     <div className='w-full rounded-2xl bg-center bg-cover duration-500 relative mb-4'>
                         <Image
                             src={categories[2].url}
-                            layout='responsive'
-                            width={9} // replace with your value
-                            height={16} // replace with your value
-                            objectFit='contain' 
-                            className='rounded-2xl' 
-                            alt={'Food Category'}         
-                        />
+                            // replace with your value
+                            width={9}
+                            // replace with your value
+                            height={16}
+                            className='rounded-2xl'
+                            alt={'Food Category'}
+                            sizes="100vw"
+                            style={{
+                                width: "100%",
+                                height: "auto",
+                                objectFit: "contain"
+                            }} />
                     </div>
                     <p className="text-center font-bold">jewelery</p>
                 </div>

@@ -1,7 +1,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import Carousel from "../../components/carousel";
+
 
 
 export default function Home() {
