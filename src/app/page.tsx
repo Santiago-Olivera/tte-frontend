@@ -1,4 +1,5 @@
 
+import Header from "@/components/ui/Header";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -7,6 +8,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
+      {/* <Header /> */}
       <h1 className="text-5xl text-center">Welcome to Tech Trend Emporium</h1>
       <Image
         src="/images/tte-logo.svg"
@@ -24,6 +26,7 @@ export default function Home() {
       <Link href="/landing_page">
         <p>Go to Landing Page</p>
       </Link>
+
     </main>
   );
 }
