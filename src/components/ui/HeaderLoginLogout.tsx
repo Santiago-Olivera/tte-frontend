@@ -6,6 +6,7 @@ function HeaderLoginLogout() : JSX.Element {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const [username, setUsername] = useState('');
     const [rol, setRol] = useState('');
+    const [isOpen, setIsOpen] = useState(false);
     //const router = useRouter();
 
     // Check if user data is in local storage to keep user logged in across sessions
@@ -35,7 +36,7 @@ function HeaderLoginLogout() : JSX.Element {
         setIsLoggedIn(false);
         setUsername('');
         localStorage.removeItem('user');
-        // Optionally, redirect to home page
+        //  redirect to home page
         //router.push('/');
 
     };
@@ -57,11 +58,14 @@ function HeaderLoginLogout() : JSX.Element {
                     </div> 
                     {/* For small screens  */}
                     <div className='sm:hidden group flex flex-col relative '>
-                        <div className='flex gap-2 items-center'>
+                    <div 
+                            className='flex gap-2 items-center cursor-pointer' 
+                            onClick={() => setIsOpen(!isOpen)}
+                        >
                             <span>{username}</span>
                             <FaShoppingCart />
                         </div>
-                        <nav className="flex-col gap-4 hidden group-hover:block absolute bg-white z-10 top-full">
+                        <nav className={`flex-col gap-4 ${isOpen ? 'block' : 'hidden'} absolute bg-white z-10 top-full`}>
                             <span>{rol}</span>
                             <div className="flex flex-col gap-1">
                                 <button className="bg-black text-white text-sm p-1 rounded" onClick={handleLogout}>
@@ -72,7 +76,7 @@ function HeaderLoginLogout() : JSX.Element {
                                 </button>
                             </div>
                         </nav>
-                    </div>          
+                    </div>         
                 </div>
 
                 
