@@ -62,7 +62,7 @@ function LoginForm(): JSX.Element {
                 </div>
                 <div className="mt-10 flex justify-center items-center gap-2">
                     <p className=" text-sm">
-                        Don't have an account? 
+                        Don&apos;t have an account? 
                     </p>
                     <a href="#" className="text-black font-semibold">Register</a>
                 </div>
