@@ -1,9 +1,22 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FaShoppingCart } from 'react-icons/fa';
+import { useRouter } from 'next/navigation';
+import { decode } from 'jsonwebtoken'; // Import the decode function
+import { JwtPayload } from 'jsonwebtoken';
+import { IsLoggedInContext } from '../login/isLoggedInContext';
+
 //import { useRouter } from 'next/router';
 
+interface MyTokenPayload extends JwtPayload {
+    role?: string;
+}
+
 function HeaderLoginLogout() : JSX.Element {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    // Get the router instance:
+    const router = useRouter();
+
+    const { isLoggedIn, setIsLoggedIn } = useContext(IsLoggedInContext);
+    console.log(isLoggedIn);
     const [username, setUsername] = useState('');
     const [rol, setRol] = useState('');
     const [isOpen, setIsOpen] = useState(false);
@@ -11,31 +24,40 @@ function HeaderLoginLogout() : JSX.Element {
 
     // Check if user data is in local storage to keep user logged in across sessions
     useEffect(() => {
-        const storedUser = localStorage.getItem('user');
+        const storedUser = localStorage.getItem('user') || sessionStorage.getItem('user');
         if (storedUser) {
             const user = JSON.parse(storedUser);
-            setIsLoggedIn(true);
-            setUsername(user.username);
+            console.log(user);
+            const decodedToken = decode(user.token) as MyTokenPayload | null;
+            if (decodedToken) {
+                setIsLoggedIn(true);
+                setRol(decodedToken.role || '');
+            }
+            // Extract username directly from the stored user object
+            setUsername(user.username || '');
+        } else {
+            setIsLoggedIn(false);
+            setUsername('');
+            setRol('');
         }
-    }, []);
+    }, [isLoggedIn, setIsLoggedIn]);
 
-    const mockLogin = () => {
-        const mockResponse = {
-            token: "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlIjoiRU1QTE9ZRUUiLCJzdWIiOiJlbXBsb3llZWp1YW5AbWFpbC5jb20iLCJpYXQiOjE3MTMyODgwMTMsImV4cCI6MTcxMzI4OTUxM30.SZadVzE-JHX68dsqxi59s2c8TnDI6oqPcuIsKH7Aw68",
-            email: "employeeSantiago@mail.com",
-            username: "Santiago",
-            rol: "employee"
-        };
-        localStorage.setItem('user', JSON.stringify(mockResponse));
-        setIsLoggedIn(true);
-        setUsername(mockResponse.username);
-        setRol(mockResponse.rol);
-    };
+
+
+    const goLogin = () => {
+        if (isLoggedIn) {
+            alert('You are already logged in.');
+        } else {
+            router.push('/login');
+        }
+    }
+
 
     const handleLogout = () => {
         setIsLoggedIn(false);
         setUsername('');
         localStorage.removeItem('user');
+        sessionStorage.removeItem('user');
         //  redirect to home page
         //router.push('/');
 
@@ -45,7 +67,7 @@ function HeaderLoginLogout() : JSX.Element {
         <div >
             {isLoggedIn ? (
                 <div>
-                    <div className="sm:grid grid-flow-col gap-4 items-center hidden">
+                    <div className=" 2xl:grid grid-flow-col gap-4 items-center hidden">
                         <span>{username}</span>
                         <FaShoppingCart />
                         <span className='hidden sm:block'>{rol}</span>
@@ -57,31 +79,37 @@ function HeaderLoginLogout() : JSX.Element {
                         </button>
                     </div> 
                     {/* For small screens  */}
-                    <div className='sm:hidden group flex flex-col relative '>
-                    <div 
-                            className='flex gap-2 items-center cursor-pointer' 
+                    <div className='2xl:hidden group flex flex-col relative gap-1 '>
+                        <div 
+                            className='flex gap-2 items-center cursor-pointer flex-grow' 
                             onClick={() => setIsOpen(!isOpen)}
                         >
-                            <span>{username}</span>
+                            <div className='flex flex-grow'>{username}</div>
+                            {/* <span>{username}</span> */}
                             <FaShoppingCart />
                         </div>
-                        <nav className={`flex-col gap-4 ${isOpen ? 'block' : 'hidden'} absolute bg-white z-10 top-full`}>
-                            <span>{rol}</span>
-                            <div className="flex flex-col gap-1">
-                                <button className="bg-black text-white text-sm p-1 rounded" onClick={handleLogout}>
-                                    Logout
-                                </button>
-                                <button className="bg-black text-white text-sm p-1 rounded">
-                                    Employee Portal
-                                </button>
-                            </div>
-                        </nav>
+                        <div>
+                            <nav className={`flex flex-col gap-1 ${isOpen ? 'block' : 'hidden'} gap-1 absolute bg-transparent z-10 top-full w-full`}>
+                                <div className="bg-black text-white text-sm p-1 rounded flex items-center justify-center" >
+                                    {rol}
+                                </div>
+                                <div className="flex flex-col gap-1">
+                                    <button className="bg-black text-white text-sm p-1 rounded" onClick={handleLogout}>
+                                        Logout
+                                    </button>
+                                    <button className="bg-black text-white text-sm p-1 rounded">
+                                        Employee Portal 
+                                    </button>
+                                </div>
+                            </nav>
+                        </div>
+
                     </div>         
                 </div>
 
                 
             ) : (
-                <button className="text-black text-sm py-3" onClick={mockLogin}>
+                <button className="text-black text-sm py-3" onClick={goLogin}>
                     Login
                 </button>
             )}

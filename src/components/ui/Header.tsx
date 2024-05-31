@@ -1,16 +1,17 @@
 "use client";
 
-import React from 'react';
+import React, { useContext } from 'react';
 import Image from 'next/image';
 import HeaderLoginLogout from './HeaderLoginLogout';
+import { IsLoggedInContext } from '../login/isLoggedInContext';
 
 
 
 function Header(): JSX.Element {
     
-
+  const { isLoggedIn } = useContext(IsLoggedInContext);
     return (
-      <div className="grid grid-cols-12  w-full">
+      <div className="grid grid-cols-12  w-full ">
   
         <div className="col-span-3 bg-black">
             <p className="text-white text-center text-sm py-2">
@@ -26,9 +27,9 @@ function Header(): JSX.Element {
         </div>
         
   
-        <div className="col-span-3 bg-black">
+        <div className="col-span-3 bg-black flex justify-center ">
             <p className="text-white text-center text-sm py-2">
-              Support 
+                HELP
             </p>
         </div>
         
@@ -95,8 +96,8 @@ function Header(): JSX.Element {
         </div>
         
        {/* Header LoginLogout Component */}
-        <div className="md:col-span-4 col-span-6 bg-white grid grid-flow-col items-center justify-center">
-            <HeaderLoginLogout />
+        <div className="md:col-span-4 col-span-6 bg-white grid grid-flow-col items-center justify-start">
+          {isLoggedIn !== undefined && <HeaderLoginLogout />}
         </div>
       </div>
 

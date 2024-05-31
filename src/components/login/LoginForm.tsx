@@ -2,11 +2,14 @@
 
 
 import LoginEye from '@/components/login/LoginEye';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FaUser } from 'react-icons/fa';
 import { useRouter } from 'next/navigation';
+import { IsLoggedInContext } from './isLoggedInContext';
 
 function LoginForm(): JSX.Element {
+    // Get the setIsLoggedIn function from the context
+    const { setIsLoggedIn } = useContext(IsLoggedInContext);
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [isEmailValid, setIsEmailValid] = useState(false);
@@ -55,13 +58,20 @@ function LoginForm(): JSX.Element {
                 }
             })
             .then(data => {
+                const user = {
+                    token: data.token,
+                    username: data.username,
+                  };
                 if (rememberMe) {
-                    localStorage.setItem('token', data.token);
-                    localStorage.setItem('username', data.username);
+                    /* localStorage.setItem('token', data.token);
+                    localStorage.setItem('username', data.username); */
+                    localStorage.setItem('user', JSON.stringify(user));
                 } else {
-                    sessionStorage.setItem('token', data.token);
-                    sessionStorage.setItem('username', data.username);
+                    /* sessionStorage.setItem('token', data.token);
+                    sessionStorage.setItem('username', data.username); */
+                    sessionStorage.setItem('user', JSON.stringify(user));
                 }
+                setIsLoggedIn(true);
                 window.alert('Successfully logged in');
                 // handle successful login here, e.g. redirect to another page
                 
