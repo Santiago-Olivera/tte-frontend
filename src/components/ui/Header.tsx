@@ -4,10 +4,14 @@ import React, { useContext } from 'react';
 import Image from 'next/image';
 import HeaderLoginLogout from './HeaderLoginLogout';
 import { IsLoggedInContext } from '../login/isLoggedInContext';
+import { useRouter } from 'next/navigation';
 
 
 
 function Header(): JSX.Element {
+
+  // Get the router instance:
+  const router = useRouter();
     
   const { isLoggedIn } = useContext(IsLoggedInContext);
     return (
@@ -35,7 +39,7 @@ function Header(): JSX.Element {
         
         {/* For screens medium break point and above span 3, for screens less than the medium
         breakpoint span 6  */}
-        <div className="md:col-span-3 col-span-4 bg-red-200 grid grid-cols-3 ">
+        <div className="md:col-span-3 col-span-4 bg-red-200 grid grid-cols-3 cursor-pointer" onClick={() => router.push('/landing_page')}>
         {/* TTE logo and name */}
             <div className="col-span-1 bg-white  flex justify-end items-center">
               <div className="p-2 relative flex justify-end ">

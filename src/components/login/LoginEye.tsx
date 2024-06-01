@@ -6,9 +6,11 @@ import { FaEye, FaEyeSlash } from 'react-icons/fa';
 interface LoginEyeProps {
     password: string;
     onPasswordChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+    label: string;
+    id : string;
 }
 
-function LoginEye({ password, onPasswordChange }: LoginEyeProps): JSX.Element {
+function LoginEye({ password, onPasswordChange , label, id}: LoginEyeProps): JSX.Element {
     
     const [showPassword, setShowPassword] = useState(false);
     
@@ -25,11 +27,11 @@ function LoginEye({ password, onPasswordChange }: LoginEyeProps): JSX.Element {
 
     return (
         <div className="mt-8">
-            <label htmlFor="password" className="block text-base mb-2">Password</label>
+            <label htmlFor="password" className="block text-base mb-2">{label}</label>
             <div className="relative">
                 <input 
                     type={showPassword ? 'text' : 'password'} 
-                    id="password" 
+                    id={id} 
                     className="border w-full text-base px-5 py-3 focus:outline-none focus:ring-0 focus:border-gray-600" 
                     placeholder="Enter your password" 
                     value={password} onChange={onPasswordChange}

@@ -16,7 +16,6 @@ function HeaderLoginLogout() : JSX.Element {
     const router = useRouter();
 
     const { isLoggedIn, setIsLoggedIn } = useContext(IsLoggedInContext);
-    console.log(isLoggedIn);
     const [username, setUsername] = useState('');
     const [rol, setRol] = useState('');
     const [isOpen, setIsOpen] = useState(false);
