@@ -32,6 +32,11 @@ function LoginForm(): JSX.Element {
 
      // Get the router instance:
      const router = useRouter();
+    
+     const goRegister = (event: React.MouseEvent) => {
+        event.preventDefault();
+        router.push('/register');
+    }
 
 
     /* Handle validation of credentials from the backed */
@@ -48,10 +53,12 @@ function LoginForm(): JSX.Element {
         })
             .then(response => {
                 if (response.status === 200) {
+                    window.alert('Successfully logged in');
                     return response.json();
                 } else if (response.status === 403) {
                     throw new Error('Invalid credentials');
                 } else if (response.status === 400) {
+                    window.alert('User is already logged in');
                     throw new Error('User is already logged in');
                 } else {
                     throw new Error('Network response was not ok');
@@ -63,16 +70,12 @@ function LoginForm(): JSX.Element {
                     username: data.username,
                   };
                 if (rememberMe) {
-                    /* localStorage.setItem('token', data.token);
-                    localStorage.setItem('username', data.username); */
                     localStorage.setItem('user', JSON.stringify(user));
                 } else {
-                    /* sessionStorage.setItem('token', data.token);
-                    sessionStorage.setItem('username', data.username); */
                     sessionStorage.setItem('user', JSON.stringify(user));
                 }
                 setIsLoggedIn(true);
-                window.alert('Successfully logged in');
+                
                 // handle successful login here, e.g. redirect to another page
                 
                 // Redirect to the landing page:
@@ -112,7 +115,7 @@ function LoginForm(): JSX.Element {
                         value={username} onChange={handleUsernameChange} />
                     </div>
                     {/* Login Eye and password field */}
-                    <LoginEye password={password} onPasswordChange={handlePasswordChange} />
+                    <LoginEye password={password} onPasswordChange={handlePasswordChange} label="password" id="password"/>
                     {/* Remember me part */}
                     <div className="mt-4 flex justify-between items-center">
                         <div className="flex items-center">
@@ -136,7 +139,10 @@ function LoginForm(): JSX.Element {
                         <p className=" text-sm">
                             Don&apos;t have an account? 
                         </p>
-                        <a href="#" className="text-black font-semibold">Register</a>
+                        <button className="text-black font-semibold" onClick={goRegister}>
+                            Register
+                        </button>
+                       
                     </div>
                 </form>
             </div>
